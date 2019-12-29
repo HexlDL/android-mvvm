@@ -1,0 +1,67 @@
+ext {
+    url = [
+
+    ]
+    androidVersion = [
+            'compileSdkVersion': 29,
+            'minSdkVersion'    : 23,
+            'targetSdkVersion' : 29,
+            'appVersionCode'   : 1,
+            'appVersionName'   : '1.0.0'
+    ]
+    sdkVersion = [
+            'kotlin'                  : '1.3.50',
+            'kotlin-coroutines'       : '1.3.2',
+            'androidxAppcompat'       : '1.1.0',
+            'androidxCore-ktx'        : '1.1.0',
+            'androidxConstraintlayout': '1.1.3',
+            'retrofit'                : '2.6.2',
+            'okhttp'                  : '4.2.2',
+            'lifecycle'               : '2.2.0-rc02',
+    ]
+    commonDependencies = [
+            // android sdk
+            'kotlin'                  : "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${sdkVersion["kotlin"]}",
+            'androidxAppcompat'       : "androidx.appcompat:appcompat:${sdkVersion["androidxAppcompat"]}",
+            'androidxCore-ktx'        : "androidx.core:core-ktx:${sdkVersion["androidxCore-ktx"]}",
+            'androidxConstraintlayout': "androidx.constraintlayout:constraintlayout:${sdkVersion["androidxConstraintlayout"]}",
+            'androidxRecyclerview': "androidx.recyclerview:recyclerview:${sdkVersion["androidxAppcompat"]}"
+    ]
+    sdkDependencies = [
+            //------------------------- 框架依赖 -------------------------//
+
+            // replace dagger2 的一种依赖注入，与kotlin吻合
+            'kodein'              : "org.kodein.di:kodein-di-generic-jvm:5.2.0",
+            'kodein-android-x'    : "org.kodein.di:kodein-di-framework-android-x:5.2.0",
+
+            // rx
+            "rxandroid2"          : "io.reactivex.rxjava2:rxandroid:2.0.1",
+            "rxjava2"             : "io.reactivex.rxjava2:rxjava:2.1.6",
+
+            // retrofit
+            'retrofit'            : "com.squareup.retrofit2:retrofit:${sdkVersion["retrofit"]}",
+            'retrofit-gson'       : "com.squareup.retrofit2:converter-gson:${sdkVersion["retrofit"]}",
+            'retrofit-mock'       : "com.squareup.retrofit2:retrofit-mock:${sdkVersion["retrofit"]}",
+
+            // okhttp
+            'okhttp'              : "com.squareup.okhttp3:okhttp:${sdkVersion["okhttp"]}",
+            'okhttp-intercptor'   : "com.squareup.okhttp3:logging-interceptor:${sdkVersion["okhttp"]}",
+//            ''                : ""
+
+            // coroutines 协程
+            'coroutines'          : "org.jetbrains.kotlinx:kotlinx-coroutines-core:${sdkVersion["kotlin-coroutines"]}",
+            'coroutines-android'  : "org.jetbrains.kotlinx:kotlinx-coroutines-android:${sdkVersion["kotlin-coroutines"]}",
+
+            // lifecycle
+            'lifecycle-extensions': "androidx.lifecycle:lifecycle-extensions:${sdkVersion["lifecycle"]}",
+            'lifecycle-viewmodel' : "androidx.lifecycle:lifecycle-viewmodel-ktx:${sdkVersion["lifecycle"]}"
+
+            //------------------------- 框架依赖 -------------------------//
+
+    ]
+    testDependencies = [
+            'junit'   : "junit:junit:4.12",
+            'runner'  : "androidx.test:runner:1.2.0",
+            'espresso': "androidx.test.espresso:espresso-core:3.2.0"
+    ]
+}

@@ -1,0 +1,2 @@
+include ':app', ':basemvvm'
+rootProject.name='android-sample'

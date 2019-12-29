@@ -1,0 +1,33 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion rootProject.ext.androidVersion['compileSdkVersion']
+
+    defaultConfig {
+        applicationId "com.hexl.github"
+
+        minSdkVersion rootProject.ext.androidVersion['minSdkVersion']
+        targetSdkVersion rootProject.ext.androidVersion['targetSdkVersion']
+        versionCode rootProject.ext.androidVersion['versionCode']
+        versionName rootProject.ext.androidVersion['versionName']
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':basemvvm')
+    // 通用依赖
+//    def commonDependencies = rootProject.ext.commonDependencies
+//    commonDependencies.each {
+////        println("---------hexl ${it.value}")
+//        implementation "${it.value}"
+//    }
+    // sdk依赖
+
+}
